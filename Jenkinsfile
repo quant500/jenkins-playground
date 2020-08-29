@@ -3,9 +3,19 @@ pipeline {
     agent { label 'master' }
     
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                echo 'test'
+                echo 'Building...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
             }
         }
     }
