@@ -3,6 +3,13 @@ pipeline {
     agent { label 'master' }
     
     stages {
+        stage('Init') {
+            steps {
+                echo 'Init...'
+                echo "build id:    ${env.BUILD_ID} "
+                echo "jenkins url: ${env.JENKINS_URL}"
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building...'
@@ -12,7 +19,6 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('Deploy') {
