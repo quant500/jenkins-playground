@@ -6,6 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                echo BUILD_TAG
             }
         }
         stage('Test') {
