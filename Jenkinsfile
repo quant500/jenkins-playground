@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                echo BUILD_TAG
+                echo "build tag: ${BUILD_TAG}"
             }
         }
         stage('Test') {
