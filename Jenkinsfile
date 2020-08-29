@@ -7,7 +7,7 @@ pipeline {
     agent { label 'master' }
     
     environment { 
-        CC = 'clang'
+        envVar = 'Beispiel Env Var'
     }
     
     stages {
@@ -17,6 +17,7 @@ pipeline {
                 echo "build id:     ${env.BUILD_ID} "
                 echo "jenkins url:  ${env.JENKINS_URL}"
                 echo "build tag:    ${BUILD_TAG}"
+                echo "env var:      ${envVar}"
             }
         }
         stage('Build') {
