@@ -5,7 +5,7 @@ pipeline {
     }
     
     agent { 
-        docker { image 'node:14-alpine' }
+        label 'master'
     }
     
     environment { 
@@ -25,7 +25,6 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'node --version'
             }
         }
         stage('Test') {
