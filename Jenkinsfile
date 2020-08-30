@@ -4,7 +4,9 @@ pipeline {
         disableConcurrentBuilds()
     }
     
-    agent { label 'master' }
+    agent { 
+        docker { image 'node:14-alpine' }
+    }
     
     environment { 
         envVar = 'Beispiel Env Var'
@@ -23,7 +25,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                bat 'set'
+                sh 'node --version'
             }
         }
         stage('Test') {
