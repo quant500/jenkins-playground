@@ -23,7 +23,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn --version'
+                bat 'set'
             }
         }
         stage('Test') {
