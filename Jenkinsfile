@@ -20,6 +20,7 @@ pipeline {
                 echo "jenkins url:  ${env.JENKINS_URL}"
                 echo "build tag:    ${BUILD_TAG}"
                 echo "env var:      ${envVar}"
+                sh "mvn --version"
             }
         }
         stage('Build') {
